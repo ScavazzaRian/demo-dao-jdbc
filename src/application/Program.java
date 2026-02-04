@@ -32,6 +32,14 @@ public class Program {
 		System.out.println("=== TEST 4: SELLER INSERT ===");
 		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", LocalDate.now(), 20000.0, department);
 		sellerDAO.insert(newSeller);
+		
+		System.out.println("=== TEST 5: SELLER UPDATE ===");
+		// Primeiro pego o id que quero atualizar e depois atualizo ele no banco
+		seller.setName("Martha Waine");
+		sellerDAO.update(seller);
+		
+		System.out.println("=== TEST 5: SELLER DELETE ===");
+		sellerDAO.deleteById(3);
 	}
 
 }
